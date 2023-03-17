@@ -1,15 +1,5 @@
 const express = require("express");
+const { getData, UpdateData, deleteData } = require("../controllers/calController");
 const router = express.Router();
-let number=100;
-router.get("/", (req, res) => {
-  res.status(200).json( number );
-});
-router.put("/", (req, res) => {
-    number+=Number(req.body.value);
-  res.status(200).json(Number(number ));
-});
-router.delete("/", (req, res) => {
-    number=100
-  res.status(200).json(Number(number) );
-});
+router.route("/").get(getData).put(UpdateData).delete(deleteData);
 module.exports = router;
