@@ -9,7 +9,7 @@ router.put("/", (req, res) => {
   res.status(200).json(Number(number ));
 });
 router.delete("/", (req, res) => {
-   // number-=req.body.value
+    number=100
   res.status(200).json(Number(number) );
 });
 module.exports = router;
