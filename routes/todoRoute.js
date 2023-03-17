@@ -28,8 +28,11 @@ router.post("/", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  const id = req.params.id;
-  array.splice(id, 1);
+  const { id } = req.params;
+
+  const arrayIndex = array.findIndex((p) => p.id == id);
+
+array.splice(arrayIndex, 1);
   res.status(200).json(array);
 });
 module.exports = router;
