@@ -4,6 +4,6 @@ const userData = (req, res) => {
   res.json(token);
 };
 function generateAccessToken(username) {
-  return jwt.sign(username, process.env.JWT_SECRET, { expiresIn: "1800s" });
+  return jwt.sign(username, process.env.JWT_SECRET, { expiresIn: "90d" });
 }
 module.exports={userData}
